@@ -1,9 +1,6 @@
 grammar g;
-prog: (expr NEWLINE)*;
-expr:
-	expr ('*' | '/') expr
-	| expr ('+' | '-') expr
-	| INT
-	| '(' expr ')';
-NEWLINE: [\r\n]+;
-INT: [0-9]+;
+
+expr: '-'TOKEN+'-';
+
+LETTER: ('A'..'Z');
+DIGIT:('0'..'9');
