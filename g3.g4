@@ -1,6 +1,11 @@
-grammar 1892020;
+grammar g3;
 
-expr: '-'TOKEN+'-';
+expr: TOKEN+;
 
-LETTER: ('A'..'Z');
-DIGIT:('0'..'9');
+TOKEN:'-'ZERO;
+ZERO:(LETTER|DIGIT)UNO;
+UNO:(LETTER|DIGIT)DUE;
+DUE:((LETTER|DIGIT)UNO)|'-';
+LETTER: 'A'..'Z';
+DIGIT:'0'..'9';
+WS:(' '|'\t'|'\n'|'\r')->skip;
